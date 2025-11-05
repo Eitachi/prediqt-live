@@ -1,0 +1,94 @@
+/* Font imports - must be at the top */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Syne font for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Syne', sans-serif;
+}
+
+/* Light theme variables */
+:root,
+[data-theme="light"] {
+  --bg-primary: #fdfcfc;
+  --bg-secondary: #ffffff;
+  --text-primary: #27282b;
+  --text-secondary: #6b7280;
+  --border-color: #e5e5e5;
+  --card-bg: #ffffff;
+  --category-bg: #f3f4f6;
+  --category-text: #6b7280;
+  --progress-bg: #e5e5e5;
+  --primary-color: #0ea5e9;
+  --primary-hover: #0284c7;
+  --image-bg: #f3f4f6;
+  --accent-orange: #0ea5e9;
+  --accent-green: #22c55e;
+  --accent-red: #ef4444;
+}
+
+/* Dark theme variables - Entrave exact colors */
+[data-theme="dark"] {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #151520;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border-color: #1e1e2d;
+  --card-bg: #151520;
+  --category-bg: #1e1e2d;
+  --category-text: #cbd5e1;
+  --progress-bg: #1e1e2d;
+  --primary-color: #0ea5e9;
+  --primary-hover: #0284c7;
+  --image-bg: #1e1e2d;
+  --accent-orange: #0ea5e9;
+  --accent-green: #22c55e;
+  --accent-red: #ef4444;
+  --surface: #0a0a0f;
+  --surface-elevated: #151520;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}

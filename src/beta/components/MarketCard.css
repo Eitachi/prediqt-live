@@ -1,0 +1,286 @@
+.market-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg, #ffffff);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color, #e5e7eb);
+  text-decoration: none;
+  color: inherit;
+  gap: 0.875rem;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.market-card:hover {
+  border-color: var(--accent-orange, #f97316);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.market-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.market-status-badge {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.status-indicator {
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-indicator.open {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-indicator.funding {
+  background: rgba(14, 165, 233, 0.15);
+  color: #0ea5e9;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.category-tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--category-bg, #334155);
+  color: var(--category-text, #cbd5e1);
+  text-transform: capitalize;
+  border: 1px solid var(--border-color, #334155);
+}
+
+.market-card-menu {
+  padding: 0.25rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  background: none;
+  border: none;
+  color: var(--text-secondary, #94a3b8);
+  cursor: pointer;
+}
+
+.market-card-menu:hover {
+  opacity: 1;
+}
+
+.market-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.market-card-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--image-bg, #f3f4f6);
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.market-card-question {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary, #111827);
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-height: 2.8em;
+  transition: color 0.3s ease;
+}
+
+.market-card-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color, #334155);
+}
+
+.market-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.market-stat svg {
+  flex-shrink: 0;
+  color: var(--text-secondary, #6b7280);
+  transition: color 0.3s ease;
+}
+
+.stat-label {
+  color: var(--text-secondary, #6b7280);
+  margin-right: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.market-card-odds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.odds-button {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  min-width: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.odds-button.yes {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.odds-button.yes:hover {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.odds-button.no {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.odds-button.no:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.odds-price-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.odds-price {
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.odds-lightning {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.odds-label {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.market-card-funding {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.funding-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.funding-label {
+  color: var(--text-secondary, #94a3b8);
+}
+
+.funding-percentage {
+  font-weight: 600;
+  color: var(--text-primary, #f1f5f9);
+}
+
+.funding-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--progress-bg, #334155);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.funding-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0ea5e9, #0284c7);
+  transition: width 0.3s ease;
+}
+
+.funding-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.funding-amount {
+  font-weight: 600;
+  color: var(--text-primary, #f1f5f9);
+}
+
+.funding-contributors {
+  color: var(--text-secondary, #94a3b8);
+}
+
+.fund-now-button {
+  padding: 0.75rem 1rem;
+  background: #0ea5e9;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.fund-now-button:hover {
+  background: #0284c7;
+}
+

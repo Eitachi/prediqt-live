@@ -1,0 +1,96 @@
+.price-chart-wrapper {
+  width: 100%;
+  height: 320px;
+  padding: 0;
+  position: relative;
+}
+
+
+.chart-tooltip {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  padding: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.tooltip-date {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #6b7280);
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.tooltip-values {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tooltip-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tooltip-item.yes .tooltip-label {
+  color: #22c55e;
+}
+
+.tooltip-item.no .tooltip-label {
+  color: #ef4444;
+}
+
+.tooltip-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.tooltip-value {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+  transition: color 0.3s ease;
+}
+
+/* Recharts customization */
+.recharts-wrapper {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.recharts-cartesian-grid-horizontal line {
+  stroke: var(--border-color, #e5e7eb);
+  stroke-opacity: 0.4;
+  transition: stroke 0.3s ease;
+}
+
+.recharts-cartesian-grid-vertical line {
+  display: none;
+}
+
+.recharts-line {
+  transition: all 0.3s ease;
+}
+
+.recharts-line-curve {
+  transition: all 0.3s ease;
+}
+
+.recharts-active-dot {
+  transition: all 0.2s ease;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-reference-line-line {
+  stroke-dasharray: 3 3;
+  opacity: 0.3;
+}
+

@@ -1,0 +1,147 @@
+.latest_news {
+  background: #fdfcfc;
+}
+
+.wrapper_ln-hero_home {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.heading_wrapper_ln {
+  margin-bottom: 1rem;
+}
+
+.h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #27282b;
+}
+
+.news_all_wrapper-hero_home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.news_left-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured_item-ln {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.featured_item-ln:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.image_wrapper-f_ln {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.image-f_ln {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured_item-ln:hover .image-f_ln {
+  transform: scale(1.05);
+}
+
+.text_wrapper-f_ln {
+  padding: 1.5rem;
+  background: white;
+}
+
+.txt_main-f_ln {
+  margin-bottom: 1rem;
+}
+
+.two_smaller_texts_under {
+  display: flex;
+  gap: 1rem;
+}
+
+.line-ln {
+  width: 1px;
+  background: #e8e6e3;
+}
+
+.grid-ln {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.item_grid-ln {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.item_grid-ln:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.wrapper_number-ln {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.wrapper_number-ln .hide {
+  display: none;
+}
+
+.content_item-ln {
+  flex: 1;
+}
+
+.body_small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #27282b;
+  margin-bottom: 0.5rem;
+}
+
+.subtxt_item-ln {
+  font-size: 0.75rem;
+  color: rgba(39, 40, 43, 0.64);
+}
+
+.abso_link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+@media (max-width: 968px) {
+  .news_all_wrapper-hero_home {
+    grid-template-columns: 1fr;
+  }
+  
+  .line-ln {
+    display: none;
+  }
+}

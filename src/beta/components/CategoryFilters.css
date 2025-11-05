@@ -1,0 +1,60 @@
+.category-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.category-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: var(--card-bg, #ffffff);
+  color: var(--text-secondary, #6b7280);
+  border: 1px solid var(--border-color, #e5e7eb);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.category-button:hover {
+  color: var(--text-primary, #111827);
+  border-color: var(--border-color, #d1d5db);
+  background: var(--bg-secondary, #f9fafb);
+}
+
+.category-button.active {
+  background: var(--accent-orange, #f97316);
+  color: white;
+  border-color: var(--accent-orange, #f97316);
+}
+
+.category-icon {
+  font-size: 0.875rem;
+  margin-right: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-icon svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.category-button svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+

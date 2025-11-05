@@ -1,0 +1,634 @@
+.market-detail-page {
+  min-height: calc(100vh - 80px);
+  padding: 2rem 0;
+  background: var(--bg-primary, #f9fafb);
+  margin-top: 80px;
+  transition: background-color 0.3s ease;
+}
+
+.market-detail-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Market Header */
+.market-detail-header {
+  margin-bottom: 2rem;
+}
+
+.market-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.market-status-badge {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.status-indicator {
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-indicator.open {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.category-tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--category-bg, #f3f4f6);
+  color: var(--category-text, #6b7280);
+  text-transform: capitalize;
+  border: 1px solid var(--border-color, #e5e7eb);
+  transition: all 0.3s ease;
+}
+
+.share-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  color: var(--text-primary, #111827);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.share-button:hover {
+  background: var(--bg-secondary, #f9fafb);
+  border-color: var(--accent-orange, #f97316);
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.2), 0 2px 4px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.market-header-content {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.market-icon-large {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--image-bg, #f3f4f6);
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.market-icon-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.market-header-text {
+  flex: 1;
+}
+
+.market-detail-question {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.2;
+  font-family: 'Syne', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.market-detail-description {
+  font-size: 1rem;
+  color: var(--text-secondary, #6b7280);
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  transition: color 0.3s ease;
+}
+
+.market-closing-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary, #6b7280);
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+/* Two-Column Layout */
+.market-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.market-detail-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.market-detail-sidebar {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+/* Stats Section */
+.market-stats-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.market-stat-item {
+  padding: 1.5rem;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #6b7280);
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+  transition: color 0.3s ease;
+}
+
+/* Live Market Odds Section */
+.live-market-odds-section {
+  padding: 1.5rem;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+  margin: 0;
+  font-family: 'Syne', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  color: #22c55e;
+  font-weight: 500;
+}
+
+.live-indicator svg {
+  fill: #22c55e;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.odds-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.odds-item {
+  padding: 1.25rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.odds-item.yes {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.odds-item.no {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.odds-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.odds-item.yes .odds-header {
+  color: #22c55e;
+}
+
+.odds-item.no .odds-header {
+  color: #ef4444;
+}
+
+.odds-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.odds-item.yes .odds-value {
+  color: #22c55e;
+}
+
+.odds-item.no .odds-value {
+  color: #ef4444;
+}
+
+.odds-label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.last-updated {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary, #6b7280);
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.live-badge {
+  margin-left: auto;
+  padding: 0.25rem 0.5rem;
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Price History Section */
+.price-history-section {
+  padding: 1.5rem;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.history-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.history-tabs button {
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary, #f9fafb);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  color: var(--text-secondary, #6b7280);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  position: relative;
+}
+
+.history-tabs button:hover {
+  background: var(--card-bg, #ffffff);
+  color: var(--text-primary, #111827);
+  border-color: var(--border-color, #d1d5db);
+}
+
+.history-tabs button.active {
+  background: var(--accent-orange, #0ea5e9);
+  color: white;
+  border-color: var(--accent-orange, #0ea5e9);
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.4), 0 2px 8px rgba(14, 165, 233, 0.25);
+}
+
+.history-tabs button.active:hover {
+  background: var(--primary-hover, #ea580c);
+  box-shadow: 0 0 16px rgba(14, 165, 233, 0.5), 0 4px 12px rgba(14, 165, 233, 0.35);
+}
+
+.chart-container {
+  margin: 1.5rem 0;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-item.yes {
+  color: #22c55e;
+}
+
+.legend-item.no {
+  color: #ef4444;
+}
+
+.legend-line {
+  width: 24px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.legend-item.yes .legend-line {
+  background: #22c55e;
+}
+
+.legend-item.no .legend-line {
+  background: #ef4444;
+}
+
+.chart-wrapper {
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  padding: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.03) 0%, 
+    rgba(239, 68, 68, 0.03) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.chart-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+.price-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+  transition: border-color 0.3s ease;
+}
+
+.price-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.price-info-item p {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #6b7280);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.live-dot {
+  color: #22c55e;
+  font-size: 0.5rem;
+}
+
+.price-info-item.yes .price-value {
+  color: #22c55e;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.price-info-item.no .price-value {
+  color: #ef4444;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.price-change {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #6b7280);
+  transition: color 0.3s ease;
+}
+
+.price-progression,
+.data-source {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary, #6b7280);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.progression-value,
+.source-value {
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+  transition: color 0.3s ease;
+}
+
+.data-source-note {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #6b7280);
+  margin: 0.5rem 0 0 0;
+  transition: color 0.3s ease;
+}
+
+/* Collapsible Sections */
+.collapsible-section {
+  padding: 1.5rem;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.collapsible-header svg {
+  transition: transform 0.2s ease;
+  color: var(--text-secondary, #6b7280);
+}
+
+.collapsible-header svg.expanded {
+  transform: rotate(180deg);
+}
+
+.collapsible-content {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+  transition: border-color 0.3s ease;
+}
+
+.collapsible-content p {
+  color: var(--text-secondary, #6b7280);
+  line-height: 1.6;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Trade Panel */
+.trade-panel {
+  padding: 1.5rem;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.trade-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.trade-placeholder svg {
+  color: var(--text-secondary, #6b7280);
+  opacity: 0.5;
+  transition: color 0.3s ease;
+}
+
+.trade-placeholder p {
+  color: var(--text-secondary, #6b7280);
+  font-size: 0.875rem;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.connect-wallet-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-orange, #0ea5e9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.4), 0 2px 8px rgba(14, 165, 233, 0.25);
+}
+
+.connect-wallet-btn:hover {
+  background: var(--primary-hover, #ea580c);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.5), 0 4px 16px rgba(14, 165, 233, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .market-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .market-detail-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .market-detail-question {
+    font-size: 1.5rem;
+  }
+
+  .market-header-content {
+    flex-direction: column;
+  }
+
+  .market-icon-large {
+    width: 60px;
+    height: 60px;
+  }
+
+  .odds-display {
+    grid-template-columns: 1fr;
+  }
+
+  .price-info {
+    grid-template-columns: 1fr;
+  }
+}

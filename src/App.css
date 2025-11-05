@@ -1,0 +1,102 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Common styles */
+.section_n {
+  padding: 4rem 0;
+}
+
+.container_n {
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.body_default {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.body_small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.icon_default {
+  width: 48px;
+  height: 48px;
+}
+
+.icon_small {
+  width: 24px;
+  height: 24px;
+}
+
+.buttons_wrapper-blog {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.text_inside_button {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.black-button {
+  color: white;
+}
+
+.black-text {
+  color: var(--text-primary);
+}
+
+.orange-button {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .h2 {
+    font-size: 2rem;
+  }
+  
+  .h3 {
+    font-size: 1.5rem;
+  }
+  
+  .container_n {
+    padding: 0 1rem;
+  }
+}

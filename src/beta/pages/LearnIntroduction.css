@@ -1,0 +1,24 @@
+.learn-introduction-page {
+  padding-top: 80px;
+}
+
+.wrapper_intro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wrapper_wbos {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 4rem;
+}
+
+@media (max-width: 968px) {
+  .wrapper_wbos {
+    grid-template-columns: 1fr;
+  }
+}
