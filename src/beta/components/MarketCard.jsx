@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ClickSpark from '../../components/ClickSpark'
+import BNBIcon from '../../components/BNBIcon'
 import './MarketCard.css'
 
 const MarketCard = ({ market }) => {
