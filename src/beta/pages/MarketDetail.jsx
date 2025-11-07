@@ -204,13 +204,7 @@ const MarketDetail = () => {
                     </svg>
                     <span>YES</span>
                   </div>
-                  <div className="odds-value">
-                    <BNBValue
-                      value={market.yesPrice / 100}
-                      iconSize={14}
-                      formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
-                    />
-                  </div>
+                  <div className="odds-value">{market.yesPrice}%</div>
                   <div className="odds-label">Live Price</div>
                 </div>
                 
@@ -222,13 +216,7 @@ const MarketDetail = () => {
                     </svg>
                     <span>NO</span>
                   </div>
-                  <div className="odds-value">
-                    <BNBValue
-                      value={market.noPrice / 100}
-                      iconSize={14}
-                      formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
-                    />
-                  </div>
+                  <div className="odds-value">{market.noPrice}%</div>
                   <div className="odds-label">Live Price</div>
                 </div>
               </div>
@@ -286,41 +274,19 @@ const MarketDetail = () => {
               <div className="price-info">
                 <div className="price-info-item yes">
                   <p>YES Price<span className="live-dot">●</span> Live</p>
-                  <div className="price-value">
-                    <BNBValue
-                      value={market.yesPrice / 100}
-                      iconSize={14}
-                      formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
-                    />
-                  </div>
-                  <div className="price-change">
-                    Initial: <BNBValue value={market.yesPriceInitial / 100} iconSize={12} formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }} />
-                    {' '}→ Current: <BNBValue value={market.yesPrice / 100} iconSize={12} formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }} />
-                  </div>
+                  <div className="price-value">{market.yesPrice}%</div>
+                  <div className="price-change">Initial: {market.yesPriceInitial}% → Current: {market.yesPrice}%</div>
                 </div>
                 <div className="price-info-item no">
                   <p>NO Price<span className="live-dot">●</span> Live</p>
-                  <div className="price-value">
-                    <BNBValue
-                      value={market.noPrice / 100}
-                      iconSize={14}
-                      formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
-                    />
-                  </div>
-                  <div className="price-change">
-                    Initial: <BNBValue value={market.noPriceInitial / 100} iconSize={12} formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }} />
-                    {' '}→ Current: <BNBValue value={market.noPrice / 100} iconSize={12} formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }} />
-                  </div>
+                  <div className="price-value">{market.noPrice}%</div>
+                  <div className="price-change">Initial: {market.noPriceInitial}% → Current: {market.noPrice}%</div>
                 </div>
               </div>
 
               <div className="price-progression">
                 <span>Price Progression:</span>
-                <span className="progression-value">
-                  <BNBValue value={market.yesPriceInitial / 100} iconSize={12} formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }} />
-                  {' '}→ <BNBValue value={market.yesPrice / 100} iconSize={12} formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }} />
-                  {' '}({yesChange < 0 ? '' : '+'}{yesChange}%)
-                </span>
+                <span className="progression-value">{market.yesPriceInitial}% → {market.yesPrice}% ({yesChange < 0 ? '' : '+'}{yesChange}%)</span>
               </div>
               <div className="data-source">
                 <span>Data Source:</span>

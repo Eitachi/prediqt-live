@@ -101,13 +101,7 @@ const TradeForm = ({ market, onClose }) => {
             >
               <div className="position-content">
                 <span className="position-label">YES</span>
-                <span className="position-price">
-                  <BNBValue
-                    value={(market?.yesPrice || 50) / 100}
-                    iconSize={12}
-                    formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
-                  />
-                </span>
+                <span className="position-price">{market?.yesPrice || 50}¢</span>
               </div>
             </button>
             <button
@@ -117,13 +111,7 @@ const TradeForm = ({ market, onClose }) => {
             >
               <div className="position-content">
                 <span className="position-label">NO</span>
-                <span className="position-price">
-                  <BNBValue
-                    value={(market?.noPrice || 50) / 100}
-                    iconSize={12}
-                    formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
-                  />
-                </span>
+                <span className="position-price">{market?.noPrice || 50}¢</span>
               </div>
             </button>
           </div>
@@ -197,12 +185,7 @@ const TradeForm = ({ market, onClose }) => {
         <div className="trade-summary">
           <div className="summary-row">
             <span>Avg price</span>
-            <BNBValue
-              value={currentPrice / 100}
-              iconSize={12}
-              className="summary-value"
-              formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
-            />
+            <span className="summary-value">{currentPrice}¢</span>
           </div>
           <div className="summary-row">
             <span>Shares</span>
