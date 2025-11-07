@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import Plasma from '../components/Plasma'
-import SplitText from '../components/SplitText'
 import './Home.css'
 
 const Home = () => {
@@ -10,11 +9,11 @@ const Home = () => {
       <div className="plasma-background">
         <Plasma 
           color="#1abc9c"
-          speed={0.8}
+          speed={0.5}
           direction="forward"
-          scale={1.2}
-          opacity={0.12}
-          mouseInteractive={true}
+          scale={1.0}
+          opacity={0.08}
+          mouseInteractive={false}
         />
       </div>
 
@@ -27,37 +26,11 @@ const Home = () => {
           </div>
 
           {/* Main Headline */}
-          <div className="hero-headline">
-            <SplitText
-              text="Prediction Markets"
-              tag="h1"
-              className="hero-headline-line"
-              delay={50}
-              duration={0.8}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 60 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.2}
-              rootMargin="-50px"
-              textAlign="center"
-            />
+          <h1 className="hero-headline">
+            Prediction Markets
             <br />
-            <SplitText
-              text="Made Simple & Powerful"
-              tag="h1"
-              className="hero-headline-line"
-              delay={50}
-              duration={0.8}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 60 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.2}
-              rootMargin="-50px"
-              textAlign="center"
-            />
-          </div>
+            Made Simple & Powerful
+          </h1>
 
           {/* Sub-headline */}
           <p className="hero-subheadline">
