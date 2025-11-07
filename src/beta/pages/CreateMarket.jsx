@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useWallet } from '../../contexts/WalletContext';
 import './CreateMarket.css';
-import BNBValue from '../components/BNBValue';
-import BNBIcon from '../components/BNBIcon';
+import BNBValue from '../../components/BNBValue';
+import BNBIcon from '../../components/BNBIcon';
 
 const CreateMarket = () => {
   const navigate = useNavigate();
