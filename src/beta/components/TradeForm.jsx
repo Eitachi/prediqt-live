@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useWallet } from '../../contexts/WalletContext';
+import BNBValue from '../../components/BNBValue';
+import BNBIcon from '../../components/BNBIcon';
 import './TradeForm.css';
 
 const TradeForm = ({ market, onClose }) => {
@@ -99,7 +101,13 @@ const TradeForm = ({ market, onClose }) => {
             >
               <div className="position-content">
                 <span className="position-label">YES</span>
-                <span className="position-price">{market?.yesPrice || 50}¢</span>
+                <span className="position-price">
+                  <BNBValue
+                    value={(market?.yesPrice || 50) / 100}
+                    iconSize={12}
+                    formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
+                  />
+                </span>
               </div>
             </button>
             <button
@@ -109,7 +117,13 @@ const TradeForm = ({ market, onClose }) => {
             >
               <div className="position-content">
                 <span className="position-label">NO</span>
-                <span className="position-price">{market?.noPrice || 50}¢</span>
+                <span className="position-price">
+                  <BNBValue
+                    value={(market?.noPrice || 50) / 100}
+                    iconSize={12}
+                    formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
+                  />
+                </span>
               </div>
             </button>
           </div>
@@ -119,10 +133,14 @@ const TradeForm = ({ market, onClose }) => {
         <div className="form-group">
           <label className="form-label">
             Amount
-            <span className="balance-label">Balance: ${balance.toFixed(2)}</span>
+            <span className="balance-label">
+              Balance: <BNBValue value={balance} iconSize={12} />
+            </span>
           </label>
           <div className="input-wrapper">
-            <span className="input-prefix">$</span>
+            <span className="input-prefix">
+              <BNBIcon size={14} />
+            </span>
             <input
               type="number"
               step="0.01"
@@ -141,10 +159,18 @@ const TradeForm = ({ market, onClose }) => {
             </button>
           </div>
           <div className="quick-amounts">
-            <button type="button" onClick={() => handleAmountChange('10')}>$10</button>
-            <button type="button" onClick={() => handleAmountChange('25')}>$25</button>
-            <button type="button" onClick={() => handleAmountChange('50')}>$50</button>
-            <button type="button" onClick={() => handleAmountChange('100')}>$100</button>
+            <button type="button" onClick={() => handleAmountChange('10')}>
+              <BNBIcon size={12} /> 10
+            </button>
+            <button type="button" onClick={() => handleAmountChange('25')}>
+              <BNBIcon size={12} /> 25
+            </button>
+            <button type="button" onClick={() => handleAmountChange('50')}>
+              <BNBIcon size={12} /> 50
+            </button>
+            <button type="button" onClick={() => handleAmountChange('100')}>
+              <BNBIcon size={12} /> 100
+            </button>
           </div>
         </div>
 
@@ -171,7 +197,12 @@ const TradeForm = ({ market, onClose }) => {
         <div className="trade-summary">
           <div className="summary-row">
             <span>Avg price</span>
-            <span className="summary-value">{currentPrice}¢</span>
+            <BNBValue
+              value={currentPrice / 100}
+              iconSize={12}
+              className="summary-value"
+              formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
+            />
           </div>
           <div className="summary-row">
             <span>Shares</span>
@@ -179,12 +210,12 @@ const TradeForm = ({ market, onClose }) => {
           </div>
           <div className="summary-row">
             <span>Potential return</span>
-            <span className="summary-value highlighted">${potentialReturn}</span>
+            <BNBValue value={potentialReturn} iconSize={12} className="summary-value highlighted" />
           </div>
           <div className="summary-row">
             <span>Potential profit</span>
             <span className={`summary-value ${parseFloat(potentialProfit) >= 0 ? 'profit' : 'loss'}`}>
-              ${potentialProfit} ({parseFloat(potentialProfit) >= 0 ? '+' : ''}{amount ? ((parseFloat(potentialProfit) / parseFloat(amount)) * 100).toFixed(1) : '0'}%)
+              <BNBValue value={potentialProfit} iconSize={12} /> ({parseFloat(potentialProfit) >= 0 ? '+' : ''}{amount ? ((parseFloat(potentialProfit) / parseFloat(amount)) * 100).toFixed(1) : '0'}%)
             </span>
           </div>
         </div>
@@ -195,7 +226,7 @@ const TradeForm = ({ market, onClose }) => {
           className={`trade-submit-btn ${position.toLowerCase()}`}
           disabled={!amount || parseFloat(amount) <= 0 || parseFloat(amount) > balance}
         >
-          {activeTab === 'buy' ? 'Buy' : 'Sell'} {position} for ${amount || '0.00'}
+          {activeTab === 'buy' ? 'Buy' : 'Sell'} {position} for {amount ? <BNBValue value={amount} iconSize={12} /> : <BNBValue value={0} iconSize={12} />}
         </button>
 
         {parseFloat(amount) > balance && (

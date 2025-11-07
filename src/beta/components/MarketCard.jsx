@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import BNBIcon from '../../components/BNBIcon'
+import BNBValue from '../../components/BNBValue'
 import './MarketCard.css'
 
 const MarketCard = ({ market }) => {
@@ -48,9 +48,7 @@ const MarketCard = ({ market }) => {
       <div className="market-card-stats">
         <div className="market-stat">
           <span className="stat-label">Total volume</span>
-          <span className="stat-value">
-            <BNBIcon size={14} /> {totalVolume.toLocaleString()}
-          </span>
+          <BNBValue value={totalVolume} iconSize={14} className="stat-value" />
         </div>
         <div className="market-stat">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -71,7 +69,7 @@ const MarketCard = ({ market }) => {
           </div>
           <div className="funding-footer">
             <span className="funding-amount">
-              <BNBIcon size={12} /> {totalVolume.toLocaleString()} / <BNBIcon size={12} /> {fundingTarget.toLocaleString()}
+              <BNBValue value={totalVolume} iconSize={12} /> / <BNBValue value={fundingTarget} iconSize={12} />
             </span>
             <span className="funding-contributors">{contributors} contributors</span>
           </div>
@@ -88,7 +86,14 @@ const MarketCard = ({ market }) => {
           }}>
             <span className="odds-label">Yes</span>
             <span className="odds-price-wrapper">
-              <span className="odds-price">{yesPrice.toFixed(2)}¢</span>
+              <span className="odds-price">
+                <BNBValue
+                  value={yesPrice / 100}
+                  iconSize={12}
+                  className="odds-price-value"
+                  formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
+                />
+              </span>
               <svg className="odds-lightning" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M7 1L3 7H6L5 11L9 5H6L7 1Z" fill="currentColor"/>
               </svg>
@@ -100,7 +105,14 @@ const MarketCard = ({ market }) => {
           }}>
             <span className="odds-label">No</span>
             <span className="odds-price-wrapper">
-              <span className="odds-price">{noPrice.toFixed(2)}¢</span>
+              <span className="odds-price">
+                <BNBValue
+                  value={noPrice / 100}
+                  iconSize={12}
+                  className="odds-price-value"
+                  formatOptions={{ minimumFractionDigits: 2, maximumFractionDigits: 4 }}
+                />
+              </span>
               <svg className="odds-lightning" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M7 1L3 7H6L5 11L9 5H6L7 1Z" fill="currentColor"/>
               </svg>

@@ -93,6 +93,20 @@
   color: white;
 }
 
+.bnb-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.bnb-value__icon {
+  display: inline-block;
+}
+
+.bnb-value__amount {
+  font-weight: inherit;
+}
+
 @media (max-width: 768px) {
   .h2 {
     font-size: 2rem;

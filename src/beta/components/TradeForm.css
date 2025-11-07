@@ -177,16 +177,15 @@
 .input-prefix {
   position: absolute;
   left: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-secondary, #6b7280);
+  display: inline-flex;
+  align-items: center;
   pointer-events: none;
 }
 
 .trade-input {
   width: 100%;
   padding: 0.875rem 1rem;
-  padding-left: 2.25rem;
+  padding-left: 2.5rem;
   border: 1px solid var(--border-color, #e5e7eb);
   border-radius: 8px;
   background: var(--bg-secondary, #f9fafb);
@@ -237,6 +236,9 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .quick-amounts button:hover {

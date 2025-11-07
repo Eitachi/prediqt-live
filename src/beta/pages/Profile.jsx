@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useWallet } from '../../contexts/WalletContext';
+import BNBValue from '../../components/BNBValue';
 import './Profile.css';
 
 const Profile = () => {
@@ -90,7 +91,7 @@ const Profile = () => {
             </div>
             <div className="profile-details">
               <h1 className="profile-address">{userData.address}</h1>
-              <p className="profile-balance">Balance: ${userData.balance.toLocaleString()}</p>
+              <p className="profile-balance">Balance: <BNBValue value={userData.balance} iconSize={16} /></p>
             </div>
           </div>
 
@@ -154,7 +155,7 @@ const Profile = () => {
             </div>
             <div className="stat-info">
               <span className="stat-label">Total Volume</span>
-              <span className="stat-value">${userData.totalVolume.toLocaleString()}</span>
+              <BNBValue value={userData.totalVolume} iconSize={16} className="stat-value" />
             </div>
           </div>
         </div>
@@ -222,12 +223,12 @@ const Profile = () => {
                       </span>
                     </div>
                     <div className="td">{bid.shares}</div>
-                    <div className="td">${bid.avgPrice.toFixed(2)}</div>
-                    <div className="td">${bid.currentPrice.toFixed(2)}</div>
-                    <div className="td">${bid.value.toLocaleString()}</div>
+                    <div className="td">{bid.avgPrice.toFixed(2)}¢</div>
+                    <div className="td">{bid.currentPrice.toFixed(2)}¢</div>
+                    <div className="td"><BNBValue value={bid.value} iconSize={12} /></div>
                     <div className="td">
                       <span className={`profit ${bid.profit >= 0 ? 'positive' : 'negative'}`}>
-                        {bid.profit >= 0 ? '+' : ''}${bid.profit.toFixed(2)}
+                        {bid.profit >= 0 ? '+' : ''}<BNBValue value={Math.abs(bid.profit)} iconSize={12} />
                       </span>
                     </div>
                     <div className="td">

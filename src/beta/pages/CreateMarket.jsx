@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useWallet } from '../../contexts/WalletContext';
 import './CreateMarket.css';
+import BNBValue from '../components/BNBValue';
+import BNBIcon from '../components/BNBIcon';
 
 const CreateMarket = () => {
   const navigate = useNavigate();
@@ -214,10 +216,12 @@ const CreateMarket = () => {
               <div className="form-group">
                 <label className="form-label required">
                   Initial Liquidity
-                  <span className="balance-info">Balance: ${balance.toFixed(2)}</span>
+                  <span className="balance-info">Balance: <BNBValue value={balance} iconSize={12} /></span>
                 </label>
                 <div className="input-wrapper">
-                  <span className="input-prefix">$</span>
+                  <span className="input-prefix">
+                    <BNBIcon size={14} />
+                  </span>
                   <input
                     type="number"
                     step="0.01"
@@ -231,7 +235,7 @@ const CreateMarket = () => {
                   />
                 </div>
                 <div className="input-hint">
-                  Minimum ${minLiquidity} required. Higher liquidity attracts more traders.
+                  Minimum <BNBValue value={minLiquidity} iconSize={12} /> required. Higher liquidity attracts more traders.
                 </div>
               </div>
 
