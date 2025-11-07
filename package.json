@@ -9,15 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.13.0",
+    "ogl": "^1.0.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
     "recharts": "^3.3.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^18.3.26",
+    "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^4.3.2",
+    "typescript": "^5.9.3",
     "vite": "^5.4.8"
   }
 }

@@ -1,10 +1,13 @@
 import { useState, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
+import { useWallet } from '../../contexts/WalletContext'
 import PriceChart from '../components/PriceChart'
+import TradeForm from '../components/TradeForm'
 import './MarketDetail.css'
 
 const MarketDetail = () => {
   const { id } = useParams()
+  const { isConnected, connectWallet } = useWallet()
   const [descriptionExpanded, setDescriptionExpanded] = useState(true)
   const [rulesExpanded, setRulesExpanded] = useState(true)
   const [priceHistoryTab, setPriceHistoryTab] = useState('30d')
@@ -352,22 +355,24 @@ const MarketDetail = () => {
           <div className="market-detail-sidebar">
             <div className="trade-panel">
               <h3 className="section-title">Trade</h3>
-              <div className="trade-placeholder">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
-                  <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
-                  <path d="M18 12a2 2 0 0 0 0 4H7v-4Z"></path>
-                </svg>
-                <p>Connect your wallet to trade</p>
-                <button className="connect-wallet-btn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
-                    <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
-                    <path d="M18 12a2 2 0 0 0 0 4H7v-4Z"></path>
+              {isConnected ? (
+                <TradeForm market={market} />
+              ) : (
+                <div className="trade-placeholder">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                    <line x1="1" y1="10" x2="23" y2="10"/>
                   </svg>
-                  Connect Wallet
-                </button>
-              </div>
+                  <p>Connect your wallet to trade</p>
+                  <button className="connect-wallet-btn" onClick={connectWallet}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                      <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                    Connect Wallet
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

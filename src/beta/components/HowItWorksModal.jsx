@@ -3,17 +3,14 @@ import './HowItWorksModal.css'
 const HowItWorksModal = ({ onClose }) => {
   const features = [
     {
-      icon: '💰',
       title: 'Trade Markets',
       description: 'Buy and sell shares on outcomes'
     },
     {
-      icon: '🚀',
       title: 'Create Markets',
       description: 'Launch your own prediction markets'
     },
     {
-      icon: '💎',
       title: 'Provide Liquidity',
       description: 'Fund markets and earn rewards'
     }
@@ -37,7 +34,6 @@ const HowItWorksModal = ({ onClose }) => {
           <div className="features-grid">
             {features.map((feature, index) => (
               <div key={index} className="feature-card">
-                <div className="feature-icon">{feature.icon}</div>
                 <h3 className="feature-title">{feature.title}</h3>
                 <p className="feature-description">{feature.description}</p>
               </div>

@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Common styles */
 .section_n {
   padding: 4rem 0;

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import MarketCard from '../components/MarketCard'
 import CategoryFilters from '../components/CategoryFilters'
+import ClickSpark from '../../components/ClickSpark'
 import './Markets.css'
 
 // Mock market data - matching Entrave
@@ -217,8 +218,15 @@ const Markets = () => {
   const displayMarkets = activeTab === 'launchpad' ? launchpadMarkets : sortedMarkets
 
   return (
-    <main className="markets-page">
-      <div className="markets-container">
+    <ClickSpark
+      sparkColor='#16a085'
+      sparkSize={12}
+      sparkRadius={25}
+      sparkCount={8}
+      duration={500}
+    >
+      <main className="markets-page">
+        <div className="markets-container">
         <div className="markets-header">
           <div className="markets-tabs">
             <button
@@ -303,6 +311,7 @@ const Markets = () => {
         </div>
       </div>
     </main>
+    </ClickSpark>
   )
 }
 

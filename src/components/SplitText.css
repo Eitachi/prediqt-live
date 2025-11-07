@@ -1,0 +1,26 @@
+.split-text {
+  display: inline-block;
+}
+
+.split-text-word {
+  white-space: nowrap;
+}
+
+.split-text-letter {
+  opacity: var(--from-opacity, 0);
+  transform: var(--from-transform, translate3d(0, 20px, 0));
+  transition: opacity 0.6s var(--easing), transform 0.6s var(--easing);
+  transition-delay: var(--delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.split-text-letter.visible {
+  opacity: var(--to-opacity, 1);
+  transform: var(--to-transform, translate3d(0, 0, 0));
+}
+
+.split-text-space {
+  display: inline-block;
+  width: 0.25em;
+}
+

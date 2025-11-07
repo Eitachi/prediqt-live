@@ -1,138 +1,123 @@
-import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import Plasma from '../components/Plasma'
+import SplitText from '../components/SplitText'
 import './Home.css'
 
 const Home = () => {
-  const heroRef = useRef(null)
-  const badgeRef = useRef(null)
-  const headlineRef = useRef(null)
-  const subheadlineRef = useRef(null)
-  const ctaRef = useRef(null)
-  const ratingRef = useRef(null)
-  const mockupRef = useRef(null)
-
-  useEffect(() => {
-    // Animation setup will be added when save file is provided
-    // This will include parallax, spring animations, and scroll effects
-  }, [])
-
   return (
     <div className="home-page">
-      {/* Gradient Background */}
-      <div className="beta-background">
-        <div className="beta-gradient"></div>
-        {/* Abstract shapes will be added from save file */}
+      {/* Plasma Background */}
+      <div className="plasma-background">
+        <Plasma 
+          color="#1abc9c"
+          speed={0.8}
+          direction="forward"
+          scale={1.2}
+          opacity={0.12}
+          mouseInteractive={true}
+        />
       </div>
 
-      {/* Header/Navigation */}
-      <header className="landing-header">
-        <div className="landing-header-container">
-          <Link to="/" className="landing-logo">
-            <span className="landing-logo-icon">✦</span>
-            <span className="landing-logo-text">Prediqt</span>
-          </Link>
-          
-          <nav className="landing-nav">
-            <a href="#home" className="landing-nav-link">Home</a>
-            <a href="#features" className="landing-nav-link">Features</a>
-            <a href="#pricing" className="landing-nav-link">Pricing</a>
-            <a href="#about" className="landing-nav-link">About</a>
-            <a href="#comparison" className="landing-nav-link">Comparison</a>
-          </nav>
-
-          <div className="landing-header-actions">
-            <button className="landing-btn-join">Join Waitlist</button>
-            <button className="landing-btn-contact">Contact Us</button>
-          </div>
-        </div>
-      </header>
-
       {/* Hero Section */}
-      <section className="beta-hero">
-        <div className="beta-hero-container">
+      <section id="home" className="hero-section">
+        <div className="hero-container">
           {/* Badge */}
-          <div className="beta-badge" ref={badgeRef}>
-            <span>200K+ Projects Managed Daily with Prediqt</span>
+          <div className="hero-badge">
+            <span>Trusted by 200K+ Traders Worldwide</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="beta-headline" ref={headlineRef}>
-            Prediction Markets Made Simple and Powerful
-          </h1>
+          <div className="hero-headline">
+            <SplitText
+              text="Prediction Markets"
+              tag="h1"
+              className="hero-headline-line"
+              delay={50}
+              duration={0.8}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 60 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.2}
+              rootMargin="-50px"
+              textAlign="center"
+            />
+            <br />
+            <SplitText
+              text="Made Simple & Powerful"
+              tag="h1"
+              className="hero-headline-line"
+              delay={50}
+              duration={0.8}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 60 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.2}
+              rootMargin="-50px"
+              textAlign="center"
+            />
+          </div>
 
           {/* Sub-headline */}
-          <p className="beta-subheadline" ref={subheadlineRef}>
-            Boost your trading with seamless prediction and market management.
+          <p className="hero-subheadline">
+            Trade on real-world events with transparency, liquidity, and cutting-edge technology.
+            <br />
+            Join the future of decentralized prediction markets.
           </p>
 
-          {/* CTA Button */}
-          <div className="beta-cta-wrapper" ref={ctaRef}>
-            <Link to="/beta/markets" className="beta-cta-button">Join Waitlist</Link>
+          {/* CTA Buttons */}
+          <div className="hero-cta-wrapper">
+            <Link to="/beta/markets" className="hero-cta-primary">
+              Explore Markets
+            </Link>
+            <a href="#learn" className="hero-cta-secondary">
+              Learn More →
+            </a>
           </div>
 
           {/* Social Proof */}
-          <div className="beta-rating" ref={ratingRef}>
-            <span className="beta-stars">★★★★★</span>
-            <span className="beta-rating-text">4.9 rating Based on 300k Users</span>
+          <div className="hero-rating">
+            <div className="hero-stars">★★★★★</div>
+            <span className="hero-rating-text">4.9/5 rating from 300K+ users</span>
           </div>
         </div>
       </section>
 
-      {/* Embedded App Mockup */}
-      <div className="beta-mockup-wrapper" ref={mockupRef}>
-        <div className="beta-mockup-window">
-          <div className="beta-mockup-header">
-            <div className="beta-traffic-lights">
-              <span className="beta-light red"></span>
-              <span className="beta-light yellow"></span>
-              <span className="beta-light green"></span>
+      {/* Features Section */}
+      <section id="features" className="features-section">
+        <div className="features-container">
+          <div className="feature-card">
+            <h3 className="feature-title">Real-Time Analytics</h3>
+            <p className="feature-description">
+              Track market movements with live data and advanced charting tools
+            </p>
             </div>
-            <div className="beta-mockup-title">
-              <span className="beta-lock-icon">🔒</span>
-              <span>Prediqt.framer.website</span>
+
+          <div className="feature-card">
+            <h3 className="feature-title">Secure & Transparent</h3>
+            <p className="feature-description">
+              Blockchain-based transactions ensure trust and transparency
+            </p>
             </div>
+
+          <div className="feature-card">
+            <h3 className="feature-title">Lightning Fast</h3>
+            <p className="feature-description">
+              Execute trades instantly with our optimized infrastructure
+            </p>
           </div>
-          <div className="beta-mockup-content">
-            {/* Mockup content will be added */}
-            <div className="beta-mockup-sidebar">
-              <div className="beta-mockup-logo">✦ Prediqt</div>
-              <div className="beta-mockup-nav">
-                <div className="beta-nav-item">Inbox <span className="beta-badge-count">22</span></div>
-                <div className="beta-nav-item">Markets</div>
-                <div className="beta-nav-item">My Predictions</div>
-                <div className="beta-nav-item">Workspace</div>
+
+          <div className="feature-card">
+            <h3 className="feature-title">Low Fees</h3>
+            <p className="feature-description">
+              Trade more, pay less with our competitive fee structure
+            </p>
               </div>
             </div>
-            <div className="beta-mockup-main">
-              <div className="beta-mockup-toolbar">
-                <div className="beta-search-bar">Search markets...</div>
-                <div className="beta-toolbar-icons">
-                  <span>➕</span>
-                  <span>🔔</span>
-                </div>
-              </div>
-              <div className="beta-mockup-filters">
-                <span className="beta-filter-active">Personal</span>
-                <span>Filter</span>
-              </div>
-              <div className="beta-mockup-list">
-                <div className="beta-list-item">
-                  <div className="beta-list-header">In Progress 2</div>
-                  <div className="beta-list-card">
-                    <div className="beta-card-title">PRED-08 Making Prediction Markets</div>
-                  </div>
-                  <div className="beta-list-card">
-                    <div className="beta-card-title">PRED-07 Create a working prototype</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   )
 }
 
 export default Home
-

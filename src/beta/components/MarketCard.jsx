@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import ClickSpark from '../../components/ClickSpark'
 import './MarketCard.css'
 
 const MarketCard = ({ market }) => {
@@ -70,37 +71,61 @@ const MarketCard = ({ market }) => {
             <span className="funding-amount">${totalVolume.toLocaleString()} / ${fundingTarget.toLocaleString()}</span>
             <span className="funding-contributors">{contributors} contributors</span>
           </div>
-          <button className="fund-now-button" onClick={(e) => {
-            e.preventDefault()
-            e.stopPropagation()
-          }}>Fund Now</button>
+          <ClickSpark
+            sparkColor='#16a085'
+            sparkSize={12}
+            sparkRadius={20}
+            sparkCount={8}
+            duration={500}
+          >
+            <button className="fund-now-button" onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}>Fund Now</button>
+          </ClickSpark>
         </div>
       ) : (
         <div className="market-card-odds">
-          <button className="odds-button yes" onClick={(e) => {
-            e.preventDefault()
-            e.stopPropagation()
-          }}>
-            <span className="odds-label">Yes</span>
-            <span className="odds-price-wrapper">
-              <span className="odds-price">{yesPrice.toFixed(2)}¢</span>
-              <svg className="odds-lightning" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M7 1L3 7H6L5 11L9 5H6L7 1Z" fill="currentColor"/>
-              </svg>
-            </span>
-          </button>
-          <button className="odds-button no" onClick={(e) => {
-            e.preventDefault()
-            e.stopPropagation()
-          }}>
-            <span className="odds-label">No</span>
-            <span className="odds-price-wrapper">
-              <span className="odds-price">{noPrice.toFixed(2)}¢</span>
-              <svg className="odds-lightning" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M7 1L3 7H6L5 11L9 5H6L7 1Z" fill="currentColor"/>
-              </svg>
-            </span>
-          </button>
+          <ClickSpark
+            sparkColor='#10b981'
+            sparkSize={10}
+            sparkRadius={18}
+            sparkCount={6}
+            duration={400}
+          >
+            <button className="odds-button yes" onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}>
+              <span className="odds-label">Yes</span>
+              <span className="odds-price-wrapper">
+                <span className="odds-price">{yesPrice.toFixed(2)}¢</span>
+                <svg className="odds-lightning" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M7 1L3 7H6L5 11L9 5H6L7 1Z" fill="currentColor"/>
+                </svg>
+              </span>
+            </button>
+          </ClickSpark>
+          <ClickSpark
+            sparkColor='#ef4444'
+            sparkSize={10}
+            sparkRadius={18}
+            sparkCount={6}
+            duration={400}
+          >
+            <button className="odds-button no" onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+            }}>
+              <span className="odds-label">No</span>
+              <span className="odds-price-wrapper">
+                <span className="odds-price">{noPrice.toFixed(2)}¢</span>
+                <svg className="odds-lightning" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M7 1L3 7H6L5 11L9 5H6L7 1Z" fill="currentColor"/>
+                </svg>
+              </span>
+            </button>
+          </ClickSpark>
         </div>
       )}
     </Link>

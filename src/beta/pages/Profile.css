@@ -1,0 +1,700 @@
+.profile-page {
+  min-height: calc(100vh - 80px);
+  padding: 2rem 0;
+  background: var(--bg-primary, #f9fafb);
+  margin-top: 80px;
+}
+
+.profile-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: var(--card-bg, #ffffff);
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile-address {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+  margin: 0;
+}
+
+.profile-balance {
+  font-size: 1.1rem;
+  color: var(--text-secondary, #6b7280);
+  margin: 0;
+}
+
+.create-bid-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(22, 160, 133, 0.3);
+}
+
+.create-bid-btn:hover {
+  background: linear-gradient(135deg, #138d75 0%, #16a085 100%);
+  box-shadow: 0 6px 16px rgba(22, 160, 133, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Stats Cards */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--card-bg, #ffffff);
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  border-color: #16a085;
+  box-shadow: 0 4px 12px rgba(22, 160, 133, 0.1);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(22, 160, 133, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #16a085;
+}
+
+.stat-icon.active {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.stat-icon.won {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.stat-icon.volume {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #6b7280);
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+}
+
+/* Tabs */
+.profile-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color, #e5e7eb);
+}
+
+.tab-btn {
+  padding: 0.875rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-secondary, #6b7280);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: -2px;
+}
+
+.tab-btn:hover {
+  color: var(--text-primary, #111827);
+}
+
+.tab-btn.active {
+  color: #16a085;
+  border-bottom-color: #16a085;
+}
+
+/* Profile Content */
+.profile-content {
+  background: var(--card-bg, #ffffff);
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  padding: 2rem;
+}
+
+/* Bids List */
+.bids-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.bids-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+  margin: 0;
+}
+
+.bids-filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 6px;
+  background: var(--bg-secondary, #f9fafb);
+  color: var(--text-primary, #111827);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-select:hover {
+  border-color: #16a085;
+}
+
+/* Bids Table */
+.bids-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  align-items: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.table-row:hover {
+  border-color: #16a085;
+  box-shadow: 0 2px 8px rgba(22, 160, 133, 0.1);
+  background: rgba(22, 160, 133, 0.02);
+  transform: translateY(-1px);
+}
+
+.td {
+  font-size: 0.875rem;
+  color: var(--text-primary, #111827);
+}
+
+.market-name {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.position-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.position-badge.yes {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.position-badge.no {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.profit.positive {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.profit.negative {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.action-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn.sell {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.action-btn.sell:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* History & Settings */
+.history-section,
+.settings-section {
+  padding: 2rem;
+}
+
+.history-section h2,
+.settings-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary, #111827);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary, #6b7280);
+  font-size: 1rem;
+}
+
+.settings-form {
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: var(--card-bg, #ffffff);
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.create-market-modal {
+  max-width: 700px;
+}
+
+.modal-body {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary, #111827);
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary, #6b7280);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--text-primary, #111827);
+}
+
+.modal-body-trade {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.market-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  background: var(--bg-secondary, #f9fafb);
+  color: var(--text-primary, #111827);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1.5rem;
+}
+
+.market-select:focus {
+  outline: none;
+  border-color: #16a085;
+  background: var(--card-bg, #ffffff);
+}
+
+.select-market-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--text-secondary, #6b7280);
+}
+
+.select-market-prompt svg {
+  color: var(--text-secondary, #6b7280);
+}
+
+.select-market-prompt p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.create-bid-form {
+  padding: 2rem;
+}
+
+.create-bid-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.create-bid-form label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+  margin-bottom: 0.5rem;
+}
+
+.create-bid-form select,
+.create-bid-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  background: var(--bg-secondary, #f9fafb);
+  color: var(--text-primary, #111827);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.create-bid-form select:focus,
+.create-bid-form input:focus {
+  outline: none;
+  border-color: #16a085;
+  background: var(--card-bg, #ffffff);
+}
+
+.position-toggle {
+  display: flex;
+  gap: 1rem;
+}
+
+.position-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.position-btn.yes {
+  color: #10b981;
+}
+
+.position-btn.no {
+  color: #ef4444;
+}
+
+.position-btn.yes.active {
+  background: #10b981;
+  border-color: #10b981;
+  color: #ffffff;
+}
+
+.position-btn.no.active {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #ffffff;
+}
+
+.form-summary {
+  padding: 1rem;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.summary-value {
+  font-weight: 700;
+  color: #16a085;
+  font-size: 1.25rem;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(22, 160, 133, 0.3);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #138d75 0%, #16a085 100%);
+  box-shadow: 0 6px 16px rgba(22, 160, 133, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Wallet Connect Prompt */
+.wallet-connect-prompt {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--card-bg, #ffffff);
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #e5e7eb);
+}
+
+.wallet-connect-prompt h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary, #111827);
+}
+
+.wallet-connect-prompt p {
+  font-size: 1.1rem;
+  color: var(--text-secondary, #6b7280);
+  margin-bottom: 2rem;
+}
+
+.connect-wallet-btn {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(22, 160, 133, 0.3);
+}
+
+.connect-wallet-btn:hover {
+  background: linear-gradient(135deg, #138d75 0%, #16a085 100%);
+  box-shadow: 0 6px 16px rgba(22, 160, 133, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  }
+
+  .table-header .th:nth-child(n+6),
+  .table-row .td:nth-child(n+6) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .create-bid-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .profile-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .bids-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .bids-filters {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+
+  .table-header {
+    display: none;
+  }
+
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .td {
+    padding: 0.25rem 0;
+  }
+
+  .td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+}
+

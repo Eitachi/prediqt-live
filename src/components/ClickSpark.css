@@ -1,0 +1,28 @@
+.click-spark-container {
+  position: relative;
+  display: contents;
+}
+
+.click-spark {
+  position: absolute;
+  width: var(--spark-size);
+  height: var(--spark-size);
+  background: var(--spark-color);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: spark-animation var(--duration) ease-out forwards;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+@keyframes spark-animation {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(0);
+    opacity: 0;
+  }
+}
+
