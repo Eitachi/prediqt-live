@@ -48,7 +48,9 @@ const MarketCard = ({ market }) => {
       <div className="market-card-stats">
         <div className="market-stat">
           <span className="stat-label">Total volume</span>
-          <span className="stat-value">${totalVolume.toLocaleString()}</span>
+          <span className="stat-value">
+            <BNBIcon size={14} /> {totalVolume.toLocaleString()}
+          </span>
         </div>
         <div className="market-stat">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -68,7 +70,9 @@ const MarketCard = ({ market }) => {
             <div className="funding-progress-fill" style={{ width: `${fundingProgress}%` }}></div>
           </div>
           <div className="funding-footer">
-            <span className="funding-amount">${totalVolume.toLocaleString()} / ${fundingTarget.toLocaleString()}</span>
+            <span className="funding-amount">
+              <BNBIcon size={12} /> {totalVolume.toLocaleString()} / <BNBIcon size={12} /> {fundingTarget.toLocaleString()}
+            </span>
             <span className="funding-contributors">{contributors} contributors</span>
           </div>
           <button className="fund-now-button" onClick={(e) => {
